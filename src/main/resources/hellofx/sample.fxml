@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="334.0" prefWidth="323.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hellofx.controller.Controller">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-7.0" layoutY="-2.0" prefHeight="62.0" prefWidth="331.0" style="-fx-background-color: Blue;" text="Conversor">
+         <font>
+            <Font size="30.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="RED" />
+               </light>
+            </Lighting>
+         </effect>
+      </Label>
+      <TabPane layoutX="1.0" layoutY="59.0" prefHeight="274.0" prefWidth="323.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="distancia" text="Distancia">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Group layoutX="8.0" layoutY="29.0">
+                           <children>
+                              <RadioButton fx:id="op11" layoutX="29.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="53.0" text="Mts">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="opciones11" />
+                                 </toggleGroup>
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="op12" layoutX="127.0" mnemonicParsing="false" text="Pulg" toggleGroup="$opciones11">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="op13" layoutX="222.0" layoutY="1.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="57.0" text="Pies" toggleGroup="$opciones11">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                        </Group>
+                        <Button fx:id="convertir_distancia" defaultButton="true" layoutX="235.0" layoutY="67.0" mnemonicParsing="false" onAction="#convertirDistancia" prefHeight="58.0" prefWidth="57.0" text="=" textAlignment="CENTER" textFill="#d98904" wrapText="true">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="ingresarDistancia" layoutX="29.0" layoutY="67.0" prefHeight="58.0" prefWidth="190.0" promptText="Valor a convertir">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </TextField>
+                        <Group layoutX="9.0" layoutY="149.0">
+                           <children>
+                              <RadioButton fx:id="op14" layoutX="29.0" layoutY="1.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="53.0" text="Mts">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="opciones12" />
+                                 </toggleGroup>
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="op15" layoutX="127.0" layoutY="1.0" mnemonicParsing="false" text="Pulg" toggleGroup="$opciones12">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="op16" layoutX="222.0" layoutY="1.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="57.0" text="Pies" toggleGroup="$opciones12">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                        </Group>
+                        <Label fx:id="resultadoDistancia" alignment="CENTER" layoutX="-1.0" layoutY="183.0" prefHeight="62.0" prefWidth="323.0" text="0.0 Mts" textAlignment="CENTER" textFill="#d3ad14">
+                           <font>
+                              <Font size="35.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="masa" text="Masa">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Group layoutX="8.0" layoutY="29.0">
+                           <children>
+                              <RadioButton fx:id="op21" layoutX="29.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="76.0" text="Kg">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="opciones21" />
+                                 </toggleGroup>
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="op22" layoutX="127.0" mnemonicParsing="false" text="Libra" toggleGroup="$opciones21">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="op23" layoutX="222.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="76.0" text="Onz" toggleGroup="$opciones21">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                        </Group>
+                        <Button fx:id="convertir_masa" defaultButton="true" layoutX="235.0" layoutY="67.0" mnemonicParsing="false" onAction="#convertirMasa" prefHeight="58.0" prefWidth="57.0" text="=" textAlignment="CENTER" textFill="#201694" wrapText="true">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="ingresarMasa" layoutX="29.0" layoutY="67.0" prefHeight="58.0" prefWidth="190.0" promptText="Valor a convertir">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </TextField>
+                        <Group layoutX="9.0" layoutY="149.0">
+                           <children>
+                              <RadioButton fx:id="op24" layoutX="29.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="76.0" text="Kg">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="opciones22" />
+                                 </toggleGroup>
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="op25" layoutX="127.0" mnemonicParsing="false" text="Libra" toggleGroup="$opciones22">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="op26" layoutX="222.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="76.0" text="Onz" toggleGroup="$opciones22">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                        </Group>
+                        <Label fx:id="resultadoMasa" alignment="CENTER" layoutX="-1.0" layoutY="183.0" prefHeight="62.0" prefWidth="323.0" text="0.0 Kg" textAlignment="CENTER" textFill="#100e90">
+                           <font>
+                              <Font size="35.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="datos" text="Datos">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Group layoutX="8.0" layoutY="29.0">
+                           <children>
+                              <RadioButton fx:id="op31" layoutX="29.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="76.0" text="KB">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="opciones31" />
+                                 </toggleGroup>
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="op32" layoutX="127.0" mnemonicParsing="false" text="MB" toggleGroup="$opciones31">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="op33" layoutX="222.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="76.0" text="GB" toggleGroup="$opciones31">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                        </Group>
+                        <Button fx:id="convertir_datos" defaultButton="true" layoutX="235.0" layoutY="67.0" mnemonicParsing="false" onAction="#convertirDatos" prefHeight="58.0" prefWidth="57.0" text="=" textAlignment="CENTER" textFill="#c91ca1" wrapText="true">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="ingresarDatos" layoutX="29.0" layoutY="67.0" prefHeight="58.0" prefWidth="190.0" promptText="Valor a convertir">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </TextField>
+                        <Group layoutX="9.0" layoutY="149.0">
+                           <children>
+                              <RadioButton fx:id="op34" layoutX="29.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="76.0" text="KB">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="opciones32" />
+                                 </toggleGroup>
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="op35" layoutX="127.0" mnemonicParsing="false" text="MB" toggleGroup="$opciones32">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="op36" layoutX="222.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="76.0" text="GB" toggleGroup="$opciones32">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                        </Group>
+                        <Label fx:id="resultadoDatos" alignment="CENTER" layoutX="-1.0" layoutY="183.0" prefHeight="62.0" prefWidth="323.0" text="0.0 KB" textAlignment="CENTER" textFill="#c6119f">
+                           <font>
+                              <Font size="35.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</Pane>
